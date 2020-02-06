@@ -5,6 +5,8 @@
 #include "Framework/GameObject.h"
 #include <string.h>
 #include <iostream>
+#include "Player.h"
+#include "Enemy.h"
 
 
 class Level{
@@ -26,7 +28,9 @@ private:
 	Input* input;
 
 	// Level objects
-	GameObject testSprite;
+	Player testSprite;
+	Enemy Goomb;
 	sf::Texture texture;
+	sf::Texture texture2;
 
 };
