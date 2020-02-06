@@ -2,6 +2,8 @@
 
 Enemy::Enemy()
 {
+	speedX = 300;
+	speedY = 300;
 }
 
 Enemy::~Enemy()
@@ -10,8 +12,7 @@ Enemy::~Enemy()
 
 void Enemy::update(float dt)
 {
-	speedX = 0;
-	speedY = 0;
+	move(getVelocity() * dt);
 
 	sf::Vector2u pos = window->getSize();
 	if (getPosition().x + 50 > pos.x)

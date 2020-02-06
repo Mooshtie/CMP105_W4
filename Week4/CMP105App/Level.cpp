@@ -15,6 +15,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	Goomb.setTexture(&texture2);
 	Goomb.setSize(sf::Vector2f(50, 50));
 	Goomb.setPosition(500, 500);
+	Goomb.setWindow(window);
 }
 
 Level::~Level()
