@@ -7,8 +7,8 @@ public:
 	Enemy();
 	~Enemy();
 
-	float speedX;
-	float speedY;
+	float speedX = 300;
+	float speedY = 300;
 	sf::RenderWindow* window;
 
 	void update(float dt);

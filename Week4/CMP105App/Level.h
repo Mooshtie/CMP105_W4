@@ -29,8 +29,7 @@ private:
 
 	// Level objects
 	Player testSprite;
-	Enemy Goomb;
-	sf::Texture texture;
-	sf::Texture texture2;
-
+	sf::Texture testTexture;
+	Enemy goomba;
+	sf::Texture goombaTexture;
 };
