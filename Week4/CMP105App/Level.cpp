@@ -7,7 +7,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	// initialise game objects
 	testTexture.loadFromFile("gfx/Mushroom.png");
 	testSprite.setTexture(&testTexture);
-	testSprite.setSize(sf::Vector2f(100, 100));
+	testSprite.setSize(sf::Vector2f(50, 50));
 	testSprite.setPosition(100, 100);
 	testSprite.setInput(input);
 
@@ -16,11 +16,24 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	goomba.setSize(sf::Vector2f(100, 100));
 	goomba.setPosition(500, 500);
 	goomba.setWindow(window);
+
+	mouseTexture.loadFromFile("gfx/icon.png");
+	mouse.setTexture(&mouseTexture);
+	mouse.setSize(sf::Vector2f(25, 25));
+	mouse.setInput(input);
+
+	lvlBackground.loadFromFile("gfx/Level1_1.png");
+	level.setTexture(&lvlBackground);
+	level.setSize(sf::Vector2f(11038, 675));
+	level.setPosition(0, 0);
+	level.setWindow(window);
+
+	//makes the default mouse cursor invisible
+	window->setMouseCursorVisible(false);
 }
 
 Level::~Level()
 {
-
 }
 
 // handle user input
@@ -33,13 +46,14 @@ void Level::handleInput(float dt)
 	}
 
 	testSprite.handleInput(dt);
+	mouse.handleInput(dt);
 }
 
 // Update game objects
 void Level::update(float dt)
 {
 	goomba.update(dt);
-	testSprite.update(dt);
+	level.update(dt);
 }
 
 // Render level
@@ -47,8 +61,10 @@ void Level::render()
 {
 	beginDraw();
 
+	window->draw(level);
 	window->draw(testSprite);
 	window->draw(goomba);
+	window->draw(mouse);
 
 	endDraw();
 }

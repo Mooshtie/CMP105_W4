@@ -1,17 +1,14 @@
 #pragma once
 #include "framework/GameObject.h"
-class Enemy :
+class Background :
 	public GameObject
 {
 public:
-	Enemy();
-	~Enemy();
+	Background();
+	~Background();
 
-	float speedX;
-	float speedY;
 	sf::RenderWindow* window;
 
-	void update(float dt);
 	void setWindow(sf::RenderWindow* hwnd) { window = hwnd; };
 };
 

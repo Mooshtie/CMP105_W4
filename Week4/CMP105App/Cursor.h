@@ -1,13 +1,13 @@
 #pragma once
 #include "Framework/GameObject.h"
-class Player :
+class Cursor :
 	public GameObject
 {
 public:
-	Player();
-	~Player();
+	Cursor();
+	~Cursor();
 
-	float speedX, speedY;
+	int curX, curY;
 
 	void handleInput(float dt);
 };

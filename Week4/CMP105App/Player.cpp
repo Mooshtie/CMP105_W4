@@ -15,7 +15,6 @@ void Player::handleInput(float dt)
 
 	if (input->isKeyDown(sf::Keyboard::Up))
 	{
-
 		speedY = -200;
 		setVelocity(speedX, speedY);
 		move(getVelocity() * dt);

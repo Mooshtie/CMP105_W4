@@ -7,6 +7,8 @@
 #include <iostream>
 #include "Player.h"
 #include "Enemy.h"
+#include "Cursor.h"
+#include "Background.h"
 
 
 class Level{
@@ -32,4 +34,8 @@ private:
 	sf::Texture testTexture;
 	Enemy goomba;
 	sf::Texture goombaTexture;
+	Cursor mouse;
+	sf::Texture mouseTexture;
+	Background level;
+	sf::Texture lvlBackground;
 };

@@ -12,10 +12,11 @@ Enemy::~Enemy()
 
 void Enemy::update(float dt)
 {
+	setVelocity(speedX, speedY);
 	move(getVelocity() * dt);
 
 	sf::Vector2u pos = window->getSize();
-	if (getPosition().x + 50 > pos.x)
+	if (getPosition().x + 100 > pos.x)
 	{
 		speedX = -300;
 		setVelocity(speedX, speedY);
@@ -27,7 +28,7 @@ void Enemy::update(float dt)
 		setVelocity(speedX, speedY);
 		move(getVelocity() * dt);
 	}
-	if (getPosition().y + 50 > pos.y)
+	if (getPosition().y + 100 > pos.y)
 	{
 		speedY = -300;
 		setVelocity(speedX, speedY);
@@ -35,7 +36,7 @@ void Enemy::update(float dt)
 	}
 	if (getPosition().y < 0)
 	{
-		speedY = -300;
+		speedY = 300;
 		setVelocity(speedX, speedY);
 		move(getVelocity() * dt);
 	}
