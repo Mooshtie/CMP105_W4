@@ -10,17 +10,15 @@ Background::~Background()
 
 void Background::handleInput(float dt)
 {
-	speed = 0;
-
-	if (input->isKeyDown(sf::Keyboard::Q))
+	if (input->isMouseRDown())
 	{
-		speed = -200;
+		speed = -1000;
 		setVelocity(speed, 0);
 		move(getVelocity() * dt);
 	}
-	if (input->isKeyDown(sf::Keyboard::E))
+	if (input->isMouseLDown())
 	{
-		speed = 200;
+		speed = 500;
 		setVelocity(speed, 0);
 		move(getVelocity() * dt);
 	}
@@ -28,13 +26,4 @@ void Background::handleInput(float dt)
 
 void Background::update(float dt)
 {
-	sf::Vector2u pos = window->getSize();
-	if (window->getPosition().x > pos.x)
-	{
-		speed = 0;
-	}
-	if (window->getPosition().x < 0)
-	{
-		speed = 0;
-	}
 }

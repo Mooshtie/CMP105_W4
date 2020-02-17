@@ -27,6 +27,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	level.setSize(sf::Vector2f(11038, 675));
 	level.setPosition(0, 0);
 	level.setWindow(window);
+	level.setInput(input);
 
 	//makes the default mouse cursor invisible
 	window->setMouseCursorVisible(false);
