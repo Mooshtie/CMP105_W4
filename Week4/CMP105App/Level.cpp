@@ -47,6 +47,7 @@ void Level::handleInput(float dt)
 
 	testSprite.handleInput(dt);
 	mouse.handleInput(dt);
+	level.handleInput(dt);
 }
 
 // Update game objects
